@@ -1,0 +1,12 @@
+# Ignorar el entorno virtual
+venv/
+
+# Ignorar la carpeta de medios (imágenes, documentos, etc.)
+media/
+
+# Ignorar archivos Python compilados
+*.pyc
+__pycache__/
+
+# Ignorar bases de datos SQLite
+*.sqlite3
