@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %}
+    Car
+{% endblock %} 
+{% block content %}
+<section class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1 class="text-center">New Car</h1>
+            <form action="{% url 'cars:new-car' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}  <!-- Cambia {{ form }} por {{ form.as_p }} para mejorar la separación entre campos -->
+                <button class="btn btn-primary d-block mx-auto mt-4">Add Car</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
