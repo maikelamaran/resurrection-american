@@ -1,0 +1,34 @@
+# Ignorar el entorno virtual
+venv/
+resurrectionamericancar/venv/
+
+# Ignorar la carpeta de medios (imágenes, documentos, etc.)
+resurrectionamericancar/media/
+
+# Ignorar archivos Python compilados
+*.pyc
+__pycache__/
+
+# Ignorar bases de datos SQLite
+resurrectionamericancar/db.sqlite3/
+*.sqlite3
+
+# Ignorar la carpeta de assets
+resurrectionamericancar/assets/
+# Ignorar el entorno virtual
+venv/
+resurrectionamericancar/venv/
+
+# Ignorar la carpeta de medios (imágenes, documentos, etc.)
+resurrectionamericancar/media/
+
+# Ignorar archivos Python compilados
+*.pyc
+__pycache__/
+
+# Ignorar bases de datos SQLite
+resurrectionamericancar/db.sqlite3/
+*.sqlite3
+
+# Ignorar la carpeta de assets
+resurrectionamericancar/assets/
