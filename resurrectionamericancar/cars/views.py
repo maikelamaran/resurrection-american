@@ -17,7 +17,7 @@ def cars_list(request):
     fuel_type = request.GET.get('fuel_type')
     year_min = request.GET.get('year_min') 
     year_max = request.GET.get('year_max')  
-    precio_min = request.GET.get('precio_min') or 2000  # valor predeterminado
+    precio_min = request.GET.get('precio_min') or 1000  # valor predeterminado
     precio_max = request.GET.get('precio_max') or 360000  # valor predeterminado
     color = request.GET.get('color')
     nuevo_usado = request.GET.get('nuevo_usado')
