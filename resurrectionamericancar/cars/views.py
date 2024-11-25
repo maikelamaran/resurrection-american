@@ -13,6 +13,7 @@ def cars_list(request):
     carros = Cars.objects.all()
 
   # Aplicar filtros según los parámetros del formulario
+ # Aplicar filtros según los parámetros del formulario
     marca = request.GET.get('marca')
     fuel_type = request.GET.get('fuel_type')
     year_min = request.GET.get('year_min') 
@@ -22,6 +23,7 @@ def cars_list(request):
     color = request.GET.get('color')
     nuevo_usado = request.GET.get('nuevo_usado')
     only_oneowner = request.GET.get('only_oneowner')
+    body_style = request.GET.get('body_style')
 
     if marca:
         carros = carros.filter(marca=marca)
@@ -36,11 +38,20 @@ def cars_list(request):
         carros = carros.filter(color=color)
     if nuevo_usado:
         carros = carros.filter(nuevo_usado=nuevo_usado)
+    if body_style:
+        carros = carros.filter(body_style=body_style)
     if only_oneowner == 'true':
         carros = carros.filter(only_oneowner=True)
 
+     # Ordenar los carros si se ha solicitado
+    sort_by = request.GET.get('sort_by', '')
+    if sort_by == 'precio':
+        carros = carros.order_by('precio')  # Orden ascendente por precio
+    elif sort_by == 'precio_desc':
+        carros = carros.order_by('-precio')  # Orden descendente por precio
+
     #paginador 
-    paginator = Paginator(carros, 3)
+    paginator = Paginator(carros, 6)  # Muestra 6 carros por página
     page_number = request.GET.get('page')
     cars = paginator.get_page(page_number)
 

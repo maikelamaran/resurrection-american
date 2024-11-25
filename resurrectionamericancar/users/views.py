@@ -34,3 +34,5 @@ def logout_view(request):
     if request.method == "POST":
         logout(request)
         return redirect("cars:list")
+    # Si la solicitud es GET, redirige a la página principal
+    return redirect("cars:list")

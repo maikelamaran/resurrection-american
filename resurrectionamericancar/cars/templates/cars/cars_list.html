@@ -1,12 +1,63 @@
 {% extends "layout.html" %} 
+{% load static %}
 {% block title %}
  Cars 
 {% endblock %} 
 {% block content %}
 <div class="container mt-4">
+  <div class="row mb-4 d-flex justify-content-center">
+    <!-- Card para Carros Nuevos -->
+    <div class="col-md-3">
+      <a href="{% url 'cars:list' %}?nuevo_usado=nuevo" class="text-decoration-none">
+        <div class="card shadow-sm">
+          <img src="{% static 'cars/icons/nuevoscars.webp' %}" class="card-img-top" alt="Carros Nuevos">
+          <div class="card-body text-center">
+            <h5 class="card-title">Carros Nuevos</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+  
+    <!-- Card para Carros Eléctricos -->
+    <div class="col-md-3">
+      <a href="{% url 'cars:list' %}?fuel_type=Electric" class="text-decoration-none">
+        <div class="card shadow-sm">
+          <img src="{% static 'cars/icons/electriccars.webp' %}" class="card-img-top" alt="Carros Eléctricos">
+          <div class="card-body text-center">
+            <h5 class="card-title">Carros Eléctricos</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+  
+    <!-- Card para Camionetas (Truck) -->
+    <div class="col-md-3">
+      <a href="{% url 'cars:list' %}?body_style=Truck" class="text-decoration-none">
+        <div class="card shadow-sm">
+          <img src="{% static 'cars/icons/trucks.webp' %}" class="card-img-top" alt="Camionetas">
+          <div class="card-body text-center">
+            <h5 class="card-title">Camionetas</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Card para Carros mas baratos -->
+    <div class="col-md-3">
+      <a href="{% url 'cars:list' %}?sort_by=precio" class="text-decoration-none">
+        <div class="card shadow-sm">
+          <img src="{% static 'cars/icons/baratos.jpeg' %}" class="card-img-top" alt="Carros Más baratos">
+          <div class="card-body text-center">
+            <h5 class="card-title">Carros Más Baratos</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+  
+  </div>
   <div class="row">
     <!-- Div para los filtros a la izquierda -->
-    <div class="col-md-3">
+    <div class="col-md-3 card-filtros">
         <h5>Filtre su búsqueda</h5>
       <!-- Formulario de filtros -->
       <form method="get" action="{% url 'cars:list' %}" class="row gy-3">
@@ -14,18 +65,102 @@
           <label for="marca" class="form-label">Marca:</label>
           <select name="marca" id="marca" class="form-select">
             <option value="">Todas</option>
-            <option value="ACURA">ACURA</option>
-            <option value="ALFA ROMEO">ALFA ROMEO</option>
-            <option value="TOYOTA">TOYOTA</option>
+            <option value="ACURA">ACURA</option>           
+            <option value="ALFA ROMEO">ALFA ROMEO</option>           
+            <option value="AM GENERAL">AM GENERAL</option>           
+            <option value="ASTON MARTIN">ASTON MARTIN</option>           
+            <option value="AUSTIN-HEALEY">AUSTIN-HEALEY</option>           
+            <option value="BENTLEY">BENTLEY</option>           
+            <option value="BMW">BMW</option>           
+            <option value="BUICK">BUICK</option>           
+            <option value="CADILLAC">CADILLAC</option>           
+            <option value="CHEVROLET">CHEVROLET</option>           
+            <option value="CHRYSLER">CHRYSLER</option>           
+            <option value="DATSUN">DATSUN</option>           
+            <option value="DODGE">DODGE</option>           
+            <option value="FERRARI">FERRARI</option>           
+            <option value="FIAT">FIAT</option>           
+            <option value="FISKER">FISKER</option>           
+            <option value="FORD">FORD</option>           
+            <option value="GENESIS">GENESIS</option>           
+            <option value="GMC">GMC</option>           
+            <option value="HONDA">HONDA</option>           
+            <option value="HUMMER">HUMMER</option>           
+            <option value="HYUNDAI">HYUNDAI</option>           
+            <option value="INEOS">INEOS</option>           
+            <option value="INFINITI">INFINITI</option>           
+            <option value="JAGUAR">JAGUAR</option>           
+            <option value="JEEP">JEEP</option>           
+            <option value="KARMA">KARMA</option>           
+            <option value="KIA">KIA</option>           
+            <option value="LAMBORGHINI">LAMBORGHINI</option>           
+            <option value="LAND ROVER">LAND ROVER</option>           
+            <option value="LEXUS">LEXUS</option>           
+            <option value="LINCOLN">LINCOLN</option>           
+            <option value="LOTUS">LOTUS</option>           
+            <option value="LUCID">LUCID</option>           
+            <option value="MASERATI">MASERATI</option>           
+            <option value="MAZDA">MAZDA</option>           
+            <option value="MCLAREN">MCLAREN</option>           
+            <option value="MERCEDEZ-BENZ">MERCEDEZ-BENZ</option>           
+            <option value="MERCURY">MERCURY</option>           
+            <option value="MG">MG</option>           
+            <option value="MINI">MINI</option>           
+            <option value="MITSUBISHI">MITSUBISHI</option>           
+            <option value="NISSAN">NISSAN</option>           
+            <option value="OLDSMOBILE">OLDSMOBILE</option>           
+            <option value="PLYMOUTH">PLYMOUTH</option>           
+            <option value="POLESTAR">POLESTAR</option>           
+            <option value="PONTIAC">PONTIAC</option>           
+            <option value="PORSCHE">PORSCHE</option>           
+            <option value="RAM">RAM</option>           
+            <option value="RIVIAN">RIVIAN</option>           
+            <option value="ROLLS-ROYCE">ROLLS-ROYCE</option>           
+            <option value="SAAB">SAAB</option>           
+            <option value="SATURN">SATURN</option>           
+            <option value="SCION">SCION</option>           
+            <option value="SMART">SMART</option>           
+            <option value="SUBARU">SUBARU</option>           
+            <option value="SUZUKI">SUZUKI</option>           
+            <option value="TESLA">TESLA</option>           
+            <option value="TOYOTA">TOYOTA</option>           
+            <option value="TRIUMPH">TRIUMPH</option>           
+            <option value="VINFAST">VINFAST</option>           
+            <option value="VOLKSWAGEN">VOLKSWAGEN</option>           
+            <option value="VOLVO">VOLVO</option>
             <!-- Agregar más opciones según las marcas en tu base de datos -->
           </select>
         </div>
         <div class="col-12 mb-1">
           <label for="fuel_type" class="form-label">Tipo de Combustible:</label>
           <select name="fuel_type" id="fuel_type" class="form-select">
-            <option value="">Todos</option>
-            <option value="Gasolina">Gasolina</option>
+            <option value="">Todos</option>           
             <option value="Electric">Electric</option>
+            <option value="Hybrid">Hybrid</option>
+            <option value="Gasolina">Gasolina</option>
+            <option value="Diesel">Diesel</option>
+            <option value="Híbridos enchufables (PHEV)">Híbridos enchufables (PHEV)</option>
+            <option value="GNC (Gas Natural Comprimido)">GNC (Gas Natural Comprimido)</option>
+            <option value="GPL (Gas Licuado de petróleo)">GPL (Gas Licuado de petróleo)</option>
+            <option value="Biocombustible">Biocombustible</option>
+            <option value="Etanol">Etanol</option>
+            <!-- Agregar más opciones según los tipos de combustible -->
+          </select>
+        </div>
+        <div class="col-12 mb-1">
+          <label for="body_style" class="form-label">Body Style:</label>
+          <select name="body_style" id="body_style" class="form-select">
+            <option value="">Todos</option>           
+            <option value="Truck">Truck</option>
+            <option value="Regular cab truck">Regular cab truck</option>
+            <option value="Extended cab truck">Extended cab truck</option>
+            <option value="Minivan">Minivan</option>
+            <option value="Cargo van">Cargo van</option>
+            <option value="Passenger van">Passenger van</option>
+            <option value="Sedan">Sedan</option>
+            <option value="SUV">SUV</option>
+            <option value="Wagon">Wagon</option>
+            <option value="Hatchback">Hatchback</option>
             <!-- Agregar más opciones según los tipos de combustible -->
           </select>
         </div>
@@ -42,16 +177,20 @@
           <label for="color" class="form-label">Color:</label>
           <select name="color" id="color" class="form-select">
             <option value="">Todos</option>
-            <option value="azul">azul</option>
+            <option value="aceituna">aceituna</option>            
             <option value="amarillo">amarillo</option>
+            <option value="azul">azul</option>
             <option value="blanco">blanco</option>
             <option value="carmelita">carmelita</option>
+            <option value="dorado">dorado</option>
             <option value="gris">gris</option>
-            <option value="negro">negro</option>
-            <option value="rojo">rojo</option>
-            <option value="verde">verde</option>
             <option value="morado">morado</option>
+            <option value="negro">negro</option>
             <option value="plateado">plateado</option>
+            <option value="rojo">rojo</option>
+            <option value="rosado">rosado</option>
+            <option value="verde">verde</option>            
+            <option value="violeta">violeta</option>
             <!-- Agregar más opciones según los tipos de combustible -->
           </select>
         </div>
@@ -145,37 +284,39 @@
         <nav>
           <ul class="pagination">
             {% if cars.has_previous %}
-            <li class="page-item">
-              <a class="page-link" href="?page=1" aria-label="Primera">
-                <span aria-hidden="true">&laquo;</span>
-              </a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="?page={{ cars.previous_page_number }}" aria-label="Anterior">
-                <span aria-hidden="true">&lt;</span>
-              </a>
-            </li>
+              <li class="page-item">
+                <a class="page-link" href="?page=1{% if request.GET.sort_by %}&sort_by={{ request.GET.sort_by }}{% endif %}{% if request.GET.marca %}&marca={{ request.GET.marca }}{% endif %}{% if request.GET.fuel_type %}&fuel_type={{ request.GET.fuel_type }}{% endif %}{% if request.GET.year_min %}&year_min={{ request.GET.year_min }}{% endif %}{% if request.GET.year_max %}&year_max={{ request.GET.year_max }}{% endif %}{% if request.GET.precio_min %}&precio_min={{ request.GET.precio_min }}{% endif %}{% if request.GET.precio_max %}&precio_max={{ request.GET.precio_max }}{% endif %}{% if request.GET.color %}&color={{ request.GET.color }}{% endif %}{% if request.GET.nuevo_usado %}&nuevo_usado={{ request.GET.nuevo_usado }}{% endif %}{% if request.GET.only_oneowner %}&only_oneowner={{ request.GET.only_oneowner }}{% endif %}" aria-label="Primera">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="?page={{ cars.previous_page_number }}{% if request.GET.sort_by %}&sort_by={{ request.GET.sort_by }}{% endif %}{% if request.GET.marca %}&marca={{ request.GET.marca }}{% endif %}{% if request.GET.fuel_type %}&fuel_type={{ request.GET.fuel_type }}{% endif %}{% if request.GET.year_min %}&year_min={{ request.GET.year_min }}{% endif %}{% if request.GET.year_max %}&year_max={{ request.GET.year_max }}{% endif %}{% if request.GET.precio_min %}&precio_min={{ request.GET.precio_min }}{% endif %}{% if request.GET.precio_max %}&precio_max={{ request.GET.precio_max }}{% endif %}{% if request.GET.color %}&color={{ request.GET.color }}{% endif %}{% if request.GET.nuevo_usado %}&nuevo_usado={{ request.GET.nuevo_usado }}{% endif %}{% if request.GET.only_oneowner %}&only_oneowner={{ request.GET.only_oneowner }}{% endif %}" aria-label="Anterior">
+                  <span aria-hidden="true">&lt;</span>
+                </a>
+              </li>
             {% endif %}
             
             <li class="page-item active">
               <span class="page-link">{{ cars.number }}</span>
             </li>
-            
+
             {% if cars.has_next %}
-            <li class="page-item">
-              <a class="page-link" href="?page={{ cars.next_page_number }}" aria-label="Siguiente">
-                <span aria-hidden="true">&gt;</span>
-              </a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="?page={{ cars.paginator.num_pages }}" aria-label="Última">
-                <span aria-hidden="true">&raquo;</span>
-              </a>
-            </li>
+              <li class="page-item">
+                <a class="page-link" href="?page={{ cars.next_page_number }}{% if request.GET.sort_by %}&sort_by={{ request.GET.sort_by }}{% endif %}{% if request.GET.marca %}&marca={{ request.GET.marca }}{% endif %}{% if request.GET.fuel_type %}&fuel_type={{ request.GET.fuel_type }}{% endif %}{% if request.GET.year_min %}&year_min={{ request.GET.year_min }}{% endif %}{% if request.GET.year_max %}&year_max={{ request.GET.year_max }}{% endif %}{% if request.GET.precio_min %}&precio_min={{ request.GET.precio_min }}{% endif %}{% if request.GET.precio_max %}&precio_max={{ request.GET.precio_max }}{% endif %}{% if request.GET.color %}&color={{ request.GET.color }}{% endif %}{% if request.GET.nuevo_usado %}&nuevo_usado={{ request.GET.nuevo_usado }}{% endif %}{% if request.GET.only_oneowner %}&only_oneowner={{ request.GET.only_oneowner }}{% endif %}" aria-label="Siguiente">
+                  <span aria-hidden="true">&gt;</span>
+                </a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="?page={{ cars.paginator.num_pages }}{% if request.GET.sort_by %}&sort_by={{ request.GET.sort_by }}{% endif %}{% if request.GET.marca %}&marca={{ request.GET.marca }}{% endif %}{% if request.GET.fuel_type %}&fuel_type={{ request.GET.fuel_type }}{% endif %}{% if request.GET.year_min %}&year_min={{ request.GET.year_min }}{% endif %}{% if request.GET.year_max %}&year_max={{ request.GET.year_max }}{% endif %}{% if request.GET.precio_min %}&precio_min={{ request.GET.precio_min }}{% endif %}{% if request.GET.precio_max %}&precio_max={{ request.GET.precio_max }}{% endif %}{% if request.GET.color %}&color={{ request.GET.color }}{% endif %}{% if request.GET.nuevo_usado %}&nuevo_usado={{ request.GET.nuevo_usado }}{% endif %}{% if request.GET.only_oneowner %}&only_oneowner={{ request.GET.only_oneowner }}{% endif %}" aria-label="Última">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
             {% endif %}
           </ul>
         </nav>
       </div>
+
+
       <!--fin del paginador-->
     </div>
   </div>

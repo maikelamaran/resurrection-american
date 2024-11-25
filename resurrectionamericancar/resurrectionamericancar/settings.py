@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'cars',
     'users',
     'djmoney',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

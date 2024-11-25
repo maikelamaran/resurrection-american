@@ -101,3 +101,136 @@ a:hover {
 .logout-button:hover {
   opacity: 0.85;
 }
+
+.card-filtros {
+  background-color: #f9f9f9 !important;  /* Fondo ligeramente gris */
+  border: 1px solid #e0e0e0 !important;  /* Borde sutil de color gris */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;  /* Sombra sutil para darle profundidad */
+  padding: 20px !important;  /* Espaciado dentro de la tarjeta */
+  border-radius: 8px !important;  /* Bordes redondeados */
+  margin-bottom: 20px !important;  /* Separación con otros elementos */
+}
+
+.card-filtros h3 {
+  margin-bottom: 15px !important;  /* Separación para el título */
+  font-size: 1.25em !important;
+  color: #333 !important;  /* Título de color oscuro */
+}
+
+.card-filtros .btn {
+  background-color: #007bff !important;  /* Fondo azul */
+  color: white !important;  /* Texto blanco */
+  border: none !important;  /* Sin borde */
+  padding: 10px 15px !important;  /* Espaciado interno */
+  border-radius: 4px !important;  /* Bordes redondeados */
+  transition: background-color 0.3s ease !important;  /* Transición suave al pasar el ratón */
+}
+
+.card-filtros .btn:hover {
+  background-color: #0056b3 !important;  /* Azul más oscuro cuando el ratón pasa por encima */
+}
+
+.card-filtros input,
+.card-filtros select {
+  width: 100% !important;  /* Asegura que los campos de entrada llenen el ancho disponible */
+  padding: 10px !important;  /* Espaciado interno */
+  margin-bottom: 10px !important;  /* Separación entre los campos */
+  border: 1px solid #ccc !important;  /* Borde gris claro */
+  border-radius: 4px !important;  /* Bordes redondeados */
+  box-sizing: border-box !important;  /* Incluye padding y borde en el ancho total */
+}
+
+.card-filtros input:focus,
+.card-filtros select:focus {
+  border-color: #007bff !important;  /* Color del borde al enfocar */
+  outline: none !important;  /* Eliminar el borde del enfoque predeterminado */
+}
+
+
+/* Estilos generales para la página About */
+.about-content {
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.about-content h1 {
+  font-size: 2.5rem;
+  color: #343a40;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #495057;
+  margin-bottom: 15px;
+}
+
+.about-content strong {
+  color: #007bff;
+}
+
+.about-content p:last-child {
+  font-weight: bold;
+  color: #28a745;
+  font-size: 1.2rem;
+}
+
+/* Estilos para la estructura de la página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e9ecef;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+
+  /* Mejora en la visibilidad de los links */
+  .navbar-nav .nav-link {
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s, background-color 0.3s;
+}
+.navbar-nav .nav-link:hover {
+    color: #ffffff;
+    background-color: #007bff;
+    border-radius: 5px;
+}
+/* Ajustes en el botón de logout */
+.navbar .btn-logout {
+    background-color: #dc3545;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 0.375rem 0.75rem;
+}
+.navbar .btn-logout:hover {
+    background-color: #c82333;
+}
+/* Mejorar la apariencia de la navbar */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+/* Aumentar el espaciado entre items */
+.navbar-nav {
+    margin-left: auto;
+}
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+/* Evitar iconos en los links excepto en el de New Car */
+.nav-link i {
+    display: none;
+}
+.nav-link.new-car i {
+    display: inline-block;
+}

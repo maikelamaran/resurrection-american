@@ -11,8 +11,9 @@
         </div>
         <div class="col-md-6">
             <h2 class="text-primary">{{ car.marca }} {{ car.modelo }}</h2>
-            <h4 class="text-muted">{{ car.year }}</h4>
+            <h4 class="text-muted">{{ car.year }} - {{ car.nuevo_usado }}</h4>
             <p class="fs-5"><strong>Precio:</strong> ${{ car.precio }}</p>
+            
 
             {% if car.en_stock %}
             <p class="badge bg-success fs-6">En Stock</p>
@@ -22,7 +23,8 @@
 
             <hr class="my-4">
             <h5 class="text-dark">Detalles del Vehículo</h5>
-            <p class="text-secondary"><strong>Color:</strong> {{ car.color }}</p>
+            <p class="text-secondary"><strong>Color:</strong> {{ car.color }}</p>            
+            <p class="text-secondary"><strong>body style:</strong> {{ car.body_style }}</p>
             <p>{{ car.descripcion }}</p>
 
             <a href="#" class="btn btn-primary mt-3">Contactar para Más Información</a>

@@ -1,8 +1,18 @@
-{% extends "layout.html" %} 
+{% extends "layout.html" %}
+
 {% block title %}
-    Home 
-{% endblock %} 
-{% block content%}
-    <h1>Resurrection American Car</h1>
-   
+    Home
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-0">
+    <!-- Fila de la imagen de fondo -->
+    <div class="row vh-100 justify-content-center align-items-start" style="background-image: url('/static/cars/icons/cardealerbig.jpg'); background-size: cover; background-position: center;">
+        <!-- Capa de superposición para el texto -->
+        <div class="col-12 text-center text-white mt-5 px-3" style="background-color: rgba(0, 0, 0, 0.5);">
+            <h2 class="display-4 font-weight-bold text-shadow">WELCOME TO</h2>
+            <h1 class="display-1 font-weight-bold text-shadow">Resurrection American Car</h1>
+        </div>
+    </div>
+</div>
 {% endblock %}

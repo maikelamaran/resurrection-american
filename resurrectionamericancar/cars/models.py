@@ -13,7 +13,7 @@ class Cars(models.Model):
     only_oneowner = models.BooleanField(default=True)
     # slug = models.SlugField()
     fecha_publicacion = models.DateTimeField(auto_now_add=True)
-    imagen = models.ImageField(default='fallback.png',blank=True)
+    imagen = models.ImageField(upload_to='uploaded/',default='fallback.png',blank=True)
     color = models.CharField( max_length=100)   
     descripcion = models.CharField( max_length=100, default='-') 
     precio = models.IntegerField(default=2000)
